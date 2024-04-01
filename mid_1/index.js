@@ -40,6 +40,66 @@ const products = [
     imageUrl: "https://api.dicebear.com/8.x/icons/svg?seed=Gaming%20Console",
   },
 ];
+const cart = [];
+
+function addToCart(product) {
+  cart.push(product);
+}
+
+function removeFromCart(product) {
+  const index = cart.findIndex((item) => item.name === product.name);
+  if (index !== -1) {
+    cart.splice(index, 1);
+  }
+}
+
+function updateQuantity(product, quantity) {
+  const index = cart.findIndex((item) => item.name === product.name);
+  if (index !== -1) {
+    cart[index].quantity = quantity;
+  }
+}
+
+function displayCart() {
+  const cartContainer = document.getElementById("cart");
+  cartContainer.innerHTML = "";
+
+  cart.forEach((product) => {
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart-item");
+
+    const name = document.createElement("h3");
+    name.textContent = product.name;
+
+    const price = document.createElement("p");
+    price.textContent = "$" + product.price.toFixed(2);
+
+    const quantity = document.createElement("input");
+    quantity.type = "number";
+    quantity.value = product.quantity || 1;
+    quantity.addEventListener("change", (event) => {
+      const newQuantity = parseInt(event.target.value);
+      updateQuantity(product, newQuantity);
+    });
+
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => {
+      removeFromCart(product);
+      displayCart();
+    });
+
+    cartItem.appendChild(name);
+    cartItem.appendChild(price);
+    cartItem.appendChild(quantity);
+    cartItem.appendChild(removeButton);
+
+    cartContainer.appendChild(cartItem);
+  });
+}
+
+const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
 const container = document.getElementById("product-container");
 products.forEach((product) => {
   const productDiv = document.createElement("div");
@@ -67,8 +127,18 @@ products.forEach((product) => {
   const button = document.createElement("button");
   button.textContent = "Add to Cart";
   button.classList.add("add-to-cart-btn");
+// ----------------------------------------------------------------
 
-  infoDiv.appendChild(name);
+var buttons = document.getElementsByClassName("add-to-cart-btn");  
+Array.from(buttons).forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const product = products[index];
+    addToCart(product);
+    displayCart();
+    button.disabled = true;
+  });
+});
+  // ----------------------------------------------------------------
   infoDiv.appendChild(price);
   infoDiv.appendChild(button);
 
@@ -77,18 +147,3 @@ products.forEach((product) => {
 
   container.appendChild(productDiv);
 });
-
-
-function Add() {
-  const child = document.createElement('div');
-  child.className = 'child';
-  const delBtn = document.createElement('button');
-  delBtn.innerText = 'delete';
-  const addBtn = document.createElement('button');
-  delBtn.innerText = 'Add';
-  delBtn.onclick = function () {
-      child.remove();
-  }
-  child.appendChild(delBtn);
-  container.appendChild(child);
-}

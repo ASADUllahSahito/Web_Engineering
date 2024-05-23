@@ -1,0 +1,14 @@
+#container{
+    display: flex;
+    border-color: rgb(45, 0, 128);
+    flex-wrap: wrap;
+}
+
+.ball{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(0, 128, 92);
+    margin-top: 10px;
+    margin-right: 10px;
+}

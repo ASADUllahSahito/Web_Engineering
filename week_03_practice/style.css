@@ -1,0 +1,157 @@
+.btn{
+    border-radius: 10px;
+    background-color: yellowgreen;
+    padding: 5px;
+    color: white;
+    align-self: center;
+}
+
+.btn:hover{
+    background-color: red;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+p:hover{
+    
+    text-transform: uppercase;
+    font-family: 'Workbench', sans-serif;
+}
+
+
+.customName:first-child{
+    background-color: red;
+
+}
+span:first-child{
+    background-color: rebeccapurple;
+}
+
+div span{
+    width: 800px;
+    height: 800px;
+    background-color: yellow;
+    display: block;
+}
+
+.parent{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 1px;
+    background-color: yellowgreen;
+}
+
+.child1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 1px;
+    background-color: rgb(85, 9, 33);
+   
+
+}
+
+.child2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 1px;
+    background-color: rgb(85, 9, 41);
+    right: 0;
+   
+
+}
+
+.child3{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 1px;
+    background-color: rgb(85, 9, 41);
+    right: 0;
+    bottom: 0;
+   
+
+}
+
+.child4{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 1px;
+    background-color: rgb(85, 9, 41);
+    bottom: 0;
+    left: 0;
+   
+
+}
+
+.child5{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 1px;
+    background-color: rgb(85, 9, 41);
+    bottom: 50%;
+    left: 42%;
+    right: 50%;
+    top: 42%;
+   
+
+}
+
+.container{
+    margin: 20px;
+    width: 400px;
+    height: 400px;
+    background-color: green;
+    border-radius: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+}
+
+.innercontainer1{
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(15, 0, 128);
+    border-radius: 50%;
+}
+
+.innercontainer1{
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(34, 0, 128);
+    border-radius: 50%;
+}
+
+.innercontainer2{
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(49, 0, 128);
+    border-radius: 50%;
+}
+
+.innercontainer3{
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(13, 0, 128);
+    border-radius: 50%;
+}
+
+
+.innercontainer4{
+    margin: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(128, 0, 9);
+    border-radius: 50%;
+}
